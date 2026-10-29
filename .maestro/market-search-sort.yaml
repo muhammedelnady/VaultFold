@@ -1,0 +1,16 @@
+appId: com.vaultfold.app
+---
+# Market search & sort
+- launchApp
+- tapOn:
+    id: "market.search-input"
+- inputText: "Ethereum"
+- assertVisible:
+    text: "Ethereum"
+- assertNotVisible:
+    text: "Cardano"
+- eraseText
+- tapOn:
+    id: "market.sort-toggle"
+- assertVisible:
+    id: "market.screen"

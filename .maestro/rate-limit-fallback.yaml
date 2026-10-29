@@ -1,0 +1,14 @@
+appId: com.vaultfold.app
+---
+# Rate limit 429 fallback and cache preservation
+- launchApp
+- tapOn:
+    id: "simulator.429-toggle"
+- assertVisible:
+    id: "network-simulator-banner"
+- tapOn:
+    id: "tabs.market"
+- assertVisible:
+    id: "market.screen"
+- assertVisible:
+    text: "Bitcoin"

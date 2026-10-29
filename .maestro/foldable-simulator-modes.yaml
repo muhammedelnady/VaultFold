@@ -1,0 +1,22 @@
+appId: com.vaultfold.app
+---
+# Foldable postures: Compact, Book, Tabletop, Flat Expanded
+- launchApp
+- tapOn:
+    id: "foldable-simulator-toggle"
+- tapOn:
+    id: "posture-select-book"
+- assertVisible:
+    id: "dual-pane-master"
+- assertVisible:
+    id: "dual-pane-detail"
+- tapOn:
+    id: "posture-select-tabletop"
+- assertVisible:
+    id: "tabletop-top"
+- assertVisible:
+    id: "tabletop-bottom"
+- tapOn:
+    id: "posture-select-compact"
+- assertVisible:
+    id: "market.screen"

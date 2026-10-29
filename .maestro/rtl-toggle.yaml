@@ -1,0 +1,16 @@
+appId: com.vaultfold.app
+---
+# Runtime language & RTL toggle
+- launchApp
+- tapOn:
+    id: "tabs.settings"
+- assertVisible:
+    id: "settings.screen"
+- tapOn:
+    id: "settings.language-ar"
+- assertVisible:
+    text: "الإعدادات"
+- tapOn:
+    id: "settings.language-en"
+- assertVisible:
+    text: "Settings"

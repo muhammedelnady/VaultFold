@@ -1,0 +1,11 @@
+appId: com.vaultfold.app
+---
+# Smoke test: App launches, displays market explorer, navigation tabs respond
+- openLink: "exp+vaultfold://?__expo_url=http%3A%2F%2Flocalhost%3A8081"
+- assertVisible: "Ethereum"
+- tapOn: "tab-portfolio"
+- assertVisible: "Vault Locked"
+- tapOn: "tab-settings"
+- assertVisible: "Settings & Preferences"
+- tapOn: "tab-market"
+- assertVisible: "Ethereum"
