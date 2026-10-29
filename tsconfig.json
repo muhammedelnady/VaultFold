@@ -1,0 +1,31 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitOverride": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "exactOptionalPropertyTypes": false,
+    "skipLibCheck": true,
+    "types": ["jest", "node"],
+    "paths": {
+      "@/*": ["./src/*"],
+      "@core": ["./src/core"],
+      "@core/*": ["./src/core/*"],
+      "@domain/*": ["./src/domain/*"],
+      "@data/*": ["./src/data/*"],
+      "@infrastructure/*": ["./src/infrastructure/*"],
+      "@di/*": ["./src/di/*"],
+      "@presentation/*": ["./src/presentation/*"],
+      "@stores/*": ["./src/presentation/stores/*"],
+      "@theme": ["./src/theme-engine"],
+      "@theme/*": ["./src/theme-engine/*"],
+      "@mocks/*": ["./src/__mocks__/*"],
+      "@assets/*": ["./assets/*"]
+    }
+  },
+  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"],
+  "exclude": ["node_modules", "dist", ".maestro"]
+}

@@ -1,0 +1,10 @@
+node_modules/
+ios/
+android/
+.expo/
+dist/
+coverage/
+__fixtures__/
+docs/
+CHANGELOG.md
+package-lock.json

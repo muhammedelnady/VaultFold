@@ -1,0 +1,88 @@
+# ==============================================================================
+# VaultFold - Production GitIgnore (Expo CNG + Clean Architecture)
+# ==============================================================================
+
+# Dependencies
+node_modules/
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+pnpm-debug.*
+
+# Environment Variables & Secrets (CRITICAL: NEVER COMMIT)
+.env
+.env.*
+!.env.example
+*.jks
+*.p8
+*.p12
+*.key
+*.keystore
+*.pem
+*.mobileprovision
+credentials.json
+*service-account*.json
+GoogleService-Info.plist
+google-services.json
+
+# Expo, Metro & Build Artifacts
+.expo/
+.expo-shared/
+dist/
+web-build/
+expo-env.d.ts
+*.log
+.metro-health-check*
+*.ipa
+*.apk
+*.aab
+*.app
+*.dSYM*
+*.tgz
+
+# Continuous Native Generation (CNG) - Managed via Expo Prebuild
+/ios/
+/android/
+**/Pods/
+**/.gradle/
+**/.cxx/
+**/build/
+local.properties
+DerivedData/
+xcuserdata/
+.kotlin/
+*.orig
+*.orig.*
+
+# Test, Coverage & Tooling Caches
+coverage/
+*.lcov
+junit.xml
+*.tsbuildinfo
+.eslintcache
+.cache/
+
+# OS Junk
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDEs & Editor Configuration
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+
+# Local Agent Tooling & Husky
+.agents/
+.claude/
+.superpowers/
+.husky/_/
