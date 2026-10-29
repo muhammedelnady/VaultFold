@@ -1,0 +1,16 @@
+{
+  "welcome": "مرحباً",
+  "market": "الأسواق",
+  "portfolio": "المحفظة",
+  "settings": "الإعدادات",
+  "theme": "المظهر",
+  "language": "اللغة",
+  "currency": "العملة",
+  "biometric": "التعرف على الحيوية",
+  "alert": "تنبيهات الأسعار",
+  "transaction": "معاملة",
+  "watchlist": "المفضلة",
+  "error_offline": "أنت غير متصل",
+  "error_rateLimited": "تباطأ الطلب — أعد المحاولة",
+  "error_unknown": "خطأ غير Known"
+}
