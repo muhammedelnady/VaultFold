@@ -14,8 +14,6 @@ docs/
 /doc/
 doc/
 documentation/
-/screenshots/
-screenshots/
 
 # ------------------------------------------------------------------------------
 # 2. Environment Variables, Credentials & Secrets (CRITICAL: NEVER COMMIT)
