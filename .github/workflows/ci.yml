@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Verify (typecheck, lint, i18n, tests)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Verify (EAS profile guard, typecheck, lint, i18n parity, tests with coverage)
+        run: npm run verify
+
+      - name: Expo Doctor
+        run: npx --yes expo-doctor@1.21.5
+
+      # Blocks on critical advisories only. The current "high" findings are build-time
+      # Expo CLI dependencies (e.g. zod 3.x inside @expo/cli) and are not in the app bundle;
+      # the suggested audit fix is a downgrade to expo@51. Full report is printed for review.
+      - name: Dependency audit (production)
+        run: npm audit --omit=dev --audit-level=critical
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: coverage-report
+          path: coverage/
+          if-no-files-found: ignore

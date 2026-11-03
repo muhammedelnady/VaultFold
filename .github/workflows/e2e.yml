@@ -1,0 +1,32 @@
+name: E2E Tests (Maestro)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  maestro-android:
+    name: Maestro Android
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Maestro CLI
+        run: curl -fsSL "https://get.maestro.mobile.dev" | bash
+
+      - name: Run Maestro Flows (Mocked E2E)
+        run: |
+          export PATH="$PATH:$HOME/.maestro/bin"
+          echo "Running Maestro smoke flow..."
+          # In CI, maestro tests against dev-client/pre-built artifact

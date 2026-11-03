@@ -1,0 +1,32 @@
+appId: com.vaultfold.app
+---
+# Device modes: Standard iPhone, iPhone Duo, Foldable Book, Tabletop
+- launchApp
+- tapOn:
+    id: "foldable-simulator-toggle"
+- tapOn:
+    id: "posture-select-duo"
+- assertVisible:
+    id: "dual-pane-master"
+- assertVisible:
+    id: "dual-pane-detail"
+- assertVisible:
+    id: "hinge-gutter"
+- tapOn:
+    id: "posture-select-book"
+- assertVisible:
+    id: "dual-pane-master"
+- assertVisible:
+    id: "dual-pane-detail"
+- tapOn:
+    id: "posture-select-tabletop"
+- assertVisible:
+    id: "tabletop-top"
+- assertVisible:
+    id: "tabletop-bottom"
+- assertVisible:
+    id: "tabletop-quick-actions"
+- tapOn:
+    id: "posture-select-compact"
+- assertVisible:
+    id: "market.screen"

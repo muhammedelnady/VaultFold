@@ -1,0 +1,42 @@
+[
+  {
+    "category_id": "layer-1",
+    "name": "Layer 1 (L1)"
+  },
+  {
+    "category_id": "smart-contract-platform",
+    "name": "Smart Contract Platform"
+  },
+  {
+    "category_id": "decentralized-finance-defi",
+    "name": "Decentralized Finance (DeFi)"
+  },
+  {
+    "category_id": "meme-token",
+    "name": "Meme"
+  },
+  {
+    "category_id": "stablecoins",
+    "name": "Stablecoins"
+  },
+  {
+    "category_id": "nft-ecosystem",
+    "name": "Non-Fungible Tokens (NFT)"
+  },
+  {
+    "category_id": "artificial-intelligence",
+    "name": "Artificial Intelligence (AI)"
+  },
+  {
+    "category_id": "exchange-based-tokens",
+    "name": "Exchange-based Tokens"
+  },
+  {
+    "category_id": "proof-of-work-pow",
+    "name": "Proof of Work (PoW)"
+  },
+  {
+    "category_id": "proof-of-stake-pos",
+    "name": "Proof of Stake (PoS)"
+  }
+]

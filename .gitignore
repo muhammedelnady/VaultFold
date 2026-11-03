@@ -1,0 +1,144 @@
+# ==============================================================================
+# VaultFold - Production GitIgnore
+# React Native / Expo CNG / Clean Architecture
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Documentation & Markdown Files (User Policy: Never Track / Push)
+# ------------------------------------------------------------------------------
+*.md
+*.markdown
+/docs/
+docs/
+/doc/
+doc/
+documentation/
+/screenshots/
+screenshots/
+
+# ------------------------------------------------------------------------------
+# 2. Environment Variables, Credentials & Secrets (CRITICAL: NEVER COMMIT)
+# ------------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pub
+*.cert
+*.crt
+*.cer
+*.der
+*.p8
+*.p12
+*.pfx
+*.keystore
+*.jks
+*.mobileprovision
+*.provisionprofile
+credentials.json
+*service-account*.json
+*service_account*.json
+client_secret*.json
+secrets.json
+secrets.yaml
+secrets.yml
+*.secret
+id_rsa*
+id_ed25519*
+GoogleService-Info.plist
+google-services.json
+
+# ------------------------------------------------------------------------------
+# 3. Dependencies & Package Managers
+# ------------------------------------------------------------------------------
+node_modules/
+npm-debug.*
+yarn-debug.*
+yarn-error.*
+pnpm-debug.*
+.pnpm-store/
+
+# ------------------------------------------------------------------------------
+# 4. Expo, Metro & Native Build Artifacts
+# ------------------------------------------------------------------------------
+.expo/
+.expo-shared/
+dist/
+web-build/
+expo-env.d.ts
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.metro-health-check*
+*.ipa
+*.apk
+*.aab
+*.app
+*.dSYM*
+*.tgz
+*.tar.gz
+*.zip
+
+# ------------------------------------------------------------------------------
+# 5. Continuous Native Generation (CNG) - Managed via Expo Prebuild
+# ------------------------------------------------------------------------------
+/ios/
+/android/
+**/Pods/
+**/.gradle/
+**/.cxx/
+**/build/
+local.properties
+DerivedData/
+xcuserdata/
+.kotlin/
+*.orig
+*.orig.*
+
+# ------------------------------------------------------------------------------
+# 6. Test, Coverage & Tooling Caches
+# ------------------------------------------------------------------------------
+coverage/
+*.lcov
+junit.xml
+*.tsbuildinfo
+.eslintcache
+.cache/
+.parcel-cache/
+.turbo/
+
+# ------------------------------------------------------------------------------
+# 7. OS Metadata & Junk
+# ------------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ------------------------------------------------------------------------------
+# 8. IDEs & Editor Configuration
+# ------------------------------------------------------------------------------
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# ------------------------------------------------------------------------------
+# 9. Local Agent Tooling & Husky Internals
+# ------------------------------------------------------------------------------
+.agents/
+.claude/
+.superpowers/
+.husky/_/

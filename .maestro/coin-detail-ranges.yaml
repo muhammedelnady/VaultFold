@@ -1,0 +1,18 @@
+appId: com.vaultfold.app
+---
+# Coin detail & chart range switching
+- launchApp
+- tapOn:
+    id: "market-row-bitcoin"
+- assertVisible:
+    id: "coin-detail-screen"
+- assertVisible:
+    id: "interactive-chart"
+- tapOn:
+    id: "range-selector-7d"
+- tapOn:
+    id: "range-selector-30d"
+- tapOn:
+    id: "range-selector-1y"
+- assertVisible:
+    id: "coin-stats"

@@ -1,0 +1,30 @@
+{
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "channel": "development"
+    },
+    "preview": {
+      "distribution": "internal",
+      "channel": "preview",
+      "env": {
+        "EXPO_PUBLIC_REVIEW_MODE": "1"
+      }
+    },
+    "production": {
+      "channel": "production"
+    },
+    "e2e": {
+      "distribution": "internal",
+      "channel": "e2e",
+      "env": {
+        "EXPO_PUBLIC_E2E": "1",
+        "EXPO_NO_DEV_MENU": "1"
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}

@@ -1,0 +1,14 @@
+appId: com.vaultfold.app
+---
+# Currency selection & EGP cross-rate calculation
+- launchApp
+- tapOn:
+    id: "tabs.settings"
+- tapOn:
+    id: "settings.currency-egp"
+- tapOn:
+    id: "tabs.market"
+- assertVisible:
+    text: "EGP"
+- assertVisible:
+    text: "≈"

@@ -1,0 +1,25 @@
+appId: com.vaultfold.app
+---
+# Offline transaction queueing & outbox inspection
+- launchApp
+- tapOn:
+    id: "simulator.offline-toggle"
+- assertVisible:
+    id: "network-simulator-banner"
+- tapOn:
+    id: "tabs.vault"
+- tapOn:
+    id: "vault.demo-mode-button"
+- tapOn:
+    id: "portfolio.add-tx-button"
+- inputText: "0.2"
+- tapOn:
+    id: "tx-submit-button"
+- tapOn:
+    id: "portfolio.outbox-inspector-button"
+- assertVisible:
+    id: "outbox-inspector-sheet"
+- tapOn:
+    id: "simulator.offline-toggle"
+- tapOn:
+    id: "outbox-retry-all-button"

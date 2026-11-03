@@ -1,0 +1,34 @@
+{
+  "rates": {
+    "btc": {
+      "name": "Bitcoin",
+      "unit": "BTC",
+      "value": 1,
+      "type": "crypto"
+    },
+    "usd": {
+      "name": "US Dollar",
+      "unit": "$",
+      "value": 68000,
+      "type": "fiat"
+    },
+    "eur": {
+      "name": "Euro",
+      "unit": "€",
+      "value": 62500,
+      "type": "fiat"
+    },
+    "sar": {
+      "name": "Saudi Riyal",
+      "unit": "SR",
+      "value": 255000,
+      "type": "fiat"
+    },
+    "egp": {
+      "name": "Egyptian Pound",
+      "unit": "EGP",
+      "value": 3366000,
+      "type": "fiat"
+    }
+  }
+}

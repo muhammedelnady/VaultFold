@@ -1,0 +1,53 @@
+module.exports = {
+  preset: "jest-expo",
+  roots: ["<rootDir>/src"],
+  testMatch: ["**/*.test.{ts,tsx}", "**/*.spec.{ts,tsx}"],
+  transformIgnorePatterns: [
+    "node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|-native(pose)?-base|react-native-mmkv|react-native-nitro-modules|@tanstack/query-core)/",
+  ],
+  setupFiles: ["./setupTests.ts"],
+  clearMocks: true,
+  moduleNameMapper: {
+    "^react-native-mmkv$": "<rootDir>/src/__mocks__/react-native-mmkv.js",
+    "^@mocks/(.*)$": "<rootDir>/src/__mocks__/$1",
+    "^@core$": "<rootDir>/src/core",
+    "^@theme$": "<rootDir>/src/theme-engine",
+    "^@core/(.*)$": "<rootDir>/src/core/$1",
+    "^@domain/(.*)$": "<rootDir>/src/domain/$1",
+    "^@data/(.*)$": "<rootDir>/src/data/$1",
+    "^@infrastructure/(.*)$": "<rootDir>/src/infrastructure/$1",
+    "^@di/(.*)$": "<rootDir>/src/di/$1",
+    "^@presentation/(.*)$": "<rootDir>/src/presentation/$1",
+    "^@stores/(.*)$": "<rootDir>/src/presentation/stores/$1",
+    "^@theme/(.*)$": "<rootDir>/src/theme-engine/$1",
+    "^@assets/(.*)$": "<rootDir>/assets/$1",
+    "^@/(.*)$": "<rootDir>/src/$1",
+  },
+  collectCoverage: false,
+  coveragePathIgnorePatterns: [
+    "/node_modules/",
+    "src/app/_layout.tsx",
+    "src/di/AppProviders.tsx",
+    "\\.d\\.ts$",
+  ],
+  coverageThreshold: {
+    global: {
+      statements: 95,
+      branches: 84,
+      functions: 95,
+      lines: 95,
+    },
+    "./src/domain/**": {
+      statements: 95,
+      branches: 95,
+      functions: 95,
+      lines: 95,
+    },
+    "./src/core/**": {
+      statements: 95,
+      branches: 95,
+      functions: 95,
+      lines: 95,
+    },
+  },
+};

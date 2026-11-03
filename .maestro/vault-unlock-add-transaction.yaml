@@ -1,0 +1,26 @@
+appId: com.vaultfold.app
+---
+# Vault unlock with biometrics / demo mode & add transaction
+- launchApp
+- tapOn:
+    id: "tabs.vault"
+- assertVisible:
+    id: "vault.biometric-gate"
+- tapOn:
+    id: "vault.demo-mode-button"
+- assertVisible:
+    id: "portfolio.screen"
+- tapOn:
+    id: "portfolio.add-tx-button"
+- assertVisible:
+    id: "transaction-modal"
+- tapOn:
+    id: "tx-amount-input"
+- inputText: "0.5"
+- tapOn:
+    id: "tx-price-input"
+- inputText: "64000"
+- tapOn:
+    id: "tx-submit-button"
+- assertVisible:
+    id: "portfolio.screen"
