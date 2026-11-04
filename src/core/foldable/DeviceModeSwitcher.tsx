@@ -103,10 +103,12 @@ export function DeviceModeSwitcher({
         return (
           <Pressable
             key={mode.preset}
+            accessible={true}
             testID={`${testIdPrefix}-${mode.id}`}
             accessibilityRole="button"
             accessibilityLabel={mode.label}
             accessibilityState={{ selected: isActive }}
+            hitSlop={8}
             onPress={() => {
               usePostureOverrideStore.getState().setPreset(mode.preset);
               onSelect?.(posture, mode.preset);

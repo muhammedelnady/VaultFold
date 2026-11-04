@@ -24,7 +24,6 @@ import { StyleSheet, View } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
-import { FoldableSimulatorBar } from "@core/foldable/FoldableSimulatorBar";
 import { HingeBridge } from "@core/foldable/HingeBridge";
 import {
   createQueryPersister,
@@ -32,7 +31,7 @@ import {
   PERSIST_MAX_AGE_MS,
 } from "@core/offline/query-client";
 import { AppProviders } from "@di/AppProviders";
-import { getContainer, useHingeService } from "@di/container";
+import { useHingeService } from "@di/container";
 import { useTranslation } from "@stores/languageStore";
 import { useTheme, useThemeStore } from "@stores/themeStore";
 
@@ -43,14 +42,7 @@ const persister = createQueryPersister({
 // Keep the splash screen up until the Rubik faces (EN + AR) are registered.
 void SplashScreen.preventAutoHideAsync().catch(() => {});
 
-function toggleSimulatedOffline(offline: boolean): void {
-  try {
-    getContainer().connectivity.setSimulatedOffline(offline);
-  } catch {}
-}
-
 function InnerLayout() {
-  const isReviewMode = process.env.EXPO_PUBLIC_REVIEW_MODE === "1";
   const theme = useTheme();
   const mode = useThemeStore((s) => s.mode);
   const { isRtl } = useTranslation();
@@ -69,7 +61,6 @@ function InnerLayout() {
     >
       <StatusBar style={mode === "dark" ? "light" : "dark"} />
       <HingeBridge service={hingeService} />
-      {isReviewMode ? <FoldableSimulatorBar onToggleOffline={toggleSimulatedOffline} /> : null}
       <PersistQueryClientProvider
         client={getQueryClient()}
         persistOptions={{ persister, maxAge: PERSIST_MAX_AGE_MS, buster: "v0.1.0-schema-1" }}

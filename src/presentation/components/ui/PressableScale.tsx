@@ -29,6 +29,7 @@ export interface PressableScaleProps {
   readonly haptic?: PressHaptic;
   readonly pressedScale?: number;
   readonly disabled?: boolean;
+  readonly accessible?: boolean;
   readonly testID?: string;
   readonly nativeID?: string;
   readonly accessibilityLabel?: string;
@@ -72,6 +73,7 @@ export function PressableScale({
   haptic = "selection",
   pressedScale = 0.97,
   disabled = false,
+  accessible,
   testID = "pressable-scale",
   nativeID,
   accessibilityLabel,
@@ -106,6 +108,7 @@ export function PressableScale({
       onPressIn={handlePressIn}
       onPressOut={handlePressOut}
       disabled={disabled}
+      accessible={accessible}
       testID={testID}
       nativeID={nativeID}
       accessibilityRole={accessibilityRole}

@@ -14,6 +14,7 @@
  */
 import { useState } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { font } from "@theme";
 
@@ -41,13 +42,17 @@ export function FoldableSimulatorBar({
   onPostureChange,
   onToggleOffline,
 }: FoldableSimulatorBarProps) {
+  const insets = useSafeAreaInsets();
   const { posture, hingeBounds } = useDevicePosture();
   const preset = usePostureOverrideStore((state) => state.preset);
   const gutter = resolveHingeGutter(posture, preset, hingeBounds);
   const [offlineMode, setOfflineMode] = useState(false);
 
   return (
-    <View style={BAR_STYLES.container} testID="foldable-simulator-toggle">
+    <View
+      style={[BAR_STYLES.container, { paddingTop: Math.max(insets.top, 24) + 6 }]}
+      testID="foldable-simulator-toggle"
+    >
       <View style={BAR_STYLES.box} testID="foldable-simulator-box">
         <Text style={BAR_STYLES.title} testID="foldable-simulator-posture">
           {posture} »
@@ -59,6 +64,7 @@ export function FoldableSimulatorBar({
         <DeviceModeSwitcher onSelect={(next) => onPostureChange?.(next)} />
 
         <Pressable
+          accessible={true}
           testID="simulator.offline-toggle"
           nativeID="simulator.offline-toggle"
           accessibilityLabel={offlineMode ? "Disable offline mode" : "Enable offline mode"}
@@ -85,7 +91,6 @@ export function FoldableSimulatorBar({
 const BAR_STYLES = StyleSheet.create({
   container: {
     width: "100%",
-    paddingTop: 24,
     backgroundColor: BAR_COLORS.background,
     paddingHorizontal: 12,
     paddingBottom: 8,

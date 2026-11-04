@@ -228,6 +228,9 @@ export function SettingsScreen() {
                       return (
                         <Pressable
                           key={preset.name}
+                          accessible={true}
+                          accessibilityRole="button"
+                          accessibilityLabel={`${preset.name} accent`}
                           testID={`accent-swatch-${preset.name.toLowerCase()}`}
                           style={[
                             styles.accentSwatch,

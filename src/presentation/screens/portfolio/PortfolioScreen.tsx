@@ -106,9 +106,14 @@ export function PortfolioScreen({ onSelectCoin }: PortfolioScreenProps) {
         <View
           testID="portfolio.outbox-inspector-button"
           nativeID="portfolio.outbox-inspector-button"
+          pointerEvents="box-none"
         >
           <PressableScale
+            accessible={true}
+            accessibilityRole="button"
+            accessibilityLabel={t("portfolioScreen.outboxBtn", { count: vm.unsyncedCount })}
             testID="btn-open-outbox"
+            nativeID="btn-open-outbox"
             haptic="selection"
             style={[styles.outboxBtn, { borderColor: theme.colors.border }]}
             onPress={() => vm.setIsOutboxOpen(true)}

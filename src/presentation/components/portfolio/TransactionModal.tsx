@@ -340,6 +340,9 @@ export function TransactionModal({
               testID="transaction-action-row"
             >
               <Pressable
+                accessible={true}
+                accessibilityRole="button"
+                accessibilityLabel={t("transactionModal.cancel")}
                 testID="btn-cancel-tx"
                 nativeID="btn-cancel-tx"
                 style={styles.cancelBtn}
@@ -350,6 +353,11 @@ export function TransactionModal({
                 </Text>
               </Pressable>
               <Pressable
+                accessible={true}
+                accessibilityRole="button"
+                accessibilityLabel={
+                  isSubmitting ? t("transactionModal.saving") : t("transactionModal.saveTx")
+                }
                 testID="btn-submit-tx"
                 nativeID="tx-submit-button"
                 style={styles.submitBtn}

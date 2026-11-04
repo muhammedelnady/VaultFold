@@ -25,8 +25,9 @@ export function HingeGutter({ gutter }: HingeGutterProps) {
       entering={FadeIn.duration(180)}
       exiting={FadeOut.duration(120)}
       pointerEvents="none"
-      accessibilityElementsHidden
-      importantForAccessibility="no-hide-descendants"
+      accessible={true}
+      accessibilityLabel={`Hinge gutter ${gutter.axis} ${gutter.thickness}dp`}
+      accessibilityRole="none"
       testID="hinge-gutter"
       style={[
         isVertical ? { width: gutter.thickness } : { height: gutter.thickness },
